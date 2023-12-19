@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_quran_id/features/home/widgets/menu_item.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../configs/routes/route_location.dart';
+import '../widgets/menu_item.dart';
 import '../widgets/quran_reminder_card.dart';
 import '../widgets/top_action.dart';
 
@@ -61,8 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
               alignment: WrapAlignment.spaceBetween,
               children: [
                 MenuItem(
-                  // TODO: navigate to quran page
-                  onTap: () {},
+                  onTap: () => context.pushNamed(RouteLocation.quranScreen),
                   iconPath: "assets/icons/holy-quran.svg",
                   title: "Quran",
                 ),

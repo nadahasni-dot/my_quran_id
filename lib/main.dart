@@ -40,6 +40,7 @@ class _MyAppState extends State<MyApp> {
       routerConfig: appRoute,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        useMaterial3: false,
         fontFamily: 'Poppins',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),

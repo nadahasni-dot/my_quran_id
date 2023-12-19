@@ -7,4 +7,5 @@ class RouteLocation {
   static const String splashScreen = '/';
   static const String homeScreen = '/home-screen';
   static const String quranScreen = '/quran-screen';
+  static const String surahScreen = '/surah-screen';
 }

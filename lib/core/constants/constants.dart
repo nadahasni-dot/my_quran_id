@@ -1,1 +1,1 @@
-const String quranIdAPIBaseUrl = "https://equran.id/api/v2";
+const String quranIdAPIBaseUrl = "https://equran.id/api";
