@@ -49,7 +49,7 @@ class VerseItem extends StatelessWidget {
                   child: Text(
                     arabic,
                     textAlign: TextAlign.right,
-                    style: const TextStyle(fontSize: 20),
+                    style: const TextStyle(fontSize: 24),
                   ),
                 ),
               ],

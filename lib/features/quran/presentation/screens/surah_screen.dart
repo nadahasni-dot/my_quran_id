@@ -47,26 +47,31 @@ class SurahScreen extends ConsumerWidget {
         ],
         elevation: 1,
       ),
-      body: detailSurah.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, stacktrace) => Center(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Text(
-              e.toString(),
-              textAlign: TextAlign.center,
+      body: RefreshIndicator(
+        onRefresh: () async {
+          ref.invalidate(detailSurahProvider(extra.nomor!));
+        },
+        child: detailSurah.when(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (e, stacktrace) => Center(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Text(
+                e.toString(),
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
-        ),
-        data: (data) => ListView.separated(
-          itemCount: data.ayat!.length,
-          itemBuilder: (context, index) => VerseItem(
-            number: data.ayat![index].nomor ?? 0,
-            arabic: data.ayat![index].ar ?? '',
-            translation: data.ayat![index].idn ?? '',
+          data: (data) => ListView.separated(
+            itemCount: data.ayat!.length,
+            itemBuilder: (context, index) => VerseItem(
+              number: data.ayat![index].nomor ?? 0,
+              arabic: data.ayat![index].ar ?? '',
+              translation: data.ayat![index].idn ?? '',
+            ),
+            separatorBuilder: (context, index) =>
+                Divider(height: 1, thickness: 1, color: Colors.grey.shade300),
           ),
-          separatorBuilder: (context, index) =>
-              Divider(height: 1, thickness: 1, color: Colors.grey.shade300),
         ),
       ),
     );

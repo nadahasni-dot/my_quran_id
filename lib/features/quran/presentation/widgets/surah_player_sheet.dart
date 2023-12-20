@@ -142,7 +142,7 @@ class _SurahPlayerSheetState extends State<SurahPlayerSheet> {
                         : 0.0,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

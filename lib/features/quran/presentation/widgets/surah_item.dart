@@ -63,7 +63,7 @@ class SurahItem extends StatelessWidget {
             const SizedBox(width: 8),
             Text(
               name,
-              style: const TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 24),
             ),
           ],
         ),
